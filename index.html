@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101827">
+    <title>ROTU RUSH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <header>
+            <h1>🏃 ROTU RUSH</h1>
+            <p>RUN. JUMP. SURVIVE.</p>
+        </header>
+
+        <div class="game-screen">
+
+            <div class="score">
+                SCORE: <span id="score">0</span>
+            </div>
+
+            <div id="player">🏃</div>
+
+            <div id="obstacle">🌵</div>
+
+            <div id="game-message">
+                <h2>WELCOME TO ROTU RUSH!</h2>
+                <p>Ready to run?</p>
+                <button id="start-btn">START GAME</button>
+            </div>
+
+        </div>
+
+        <p class="instructions">
+            Tap the game screen or press SPACE to jump.
+        </p>
+
+    </div>
+
+    <script src="game.js"></script>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./sw.js")
+                    .catch(error => console.log(error));
+            });
+        }
+    </script>
+
+</body>
+</html>
