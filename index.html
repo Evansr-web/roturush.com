@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+
+  <title>ROTU RUSH</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+  <header>
+    <h1>🏃 ROTU RUSH</h1>
+    <p>Run. Jump. Survive.</p>
+  </header>
+
+  <main>
+    <div class="game-container">
+
+      <div class="score-board">
+        <span>Score: <strong id="score">0</strong></span>
+        <span>Best: <strong id="best">0</strong></span>
+      </div>
+
+      <canvas id="gameCanvas" width="800" height="300"></canvas>
+
+      <div class="controls">
+        <button id="startBtn">START GAME</button>
+        <button id="restartBtn">PLAY AGAIN</button>
+      </div>
+
+      <p id="message">Tap START GAME to begin!</p>
+      <p class="instructions">
+        Tap the screen or press SPACE to jump.
+      </p>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 ROTU RUSH | Made for runners everywhere 🚀</p>
+  </footer>
+
+  <script src="game.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+          .catch(error => console.log("Offline support error:", error));
+      });
+    }
+  </script>
+
+</body>
+    </html>
+        
